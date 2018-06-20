@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>친구들 화이팅</title>
+</head>
+<body>
+
+<div id="main">
+
+<h1>
+태양이 <img src="http://www.hyundaenews.com/imgdata/hyundaenews_com/201509/2015093023049676.jpg" height="200px" style="margin-bottom: 5px;"/> 입사까지
+</h1>
+<p id="timer">
+...
+</p>
+
+<h1>
+재빈이 <img src="https://namufile.alphawiki.org/c58dddfb9742277c34cd11466edb3c42be510aae.jpg" height="100px" style="margin-bottom: 5px;"/> 복학까지
+</h1>
+<p id="timer-jb">
+...
+</p>
+
+<h1>
+<img src="https://s3.orbi.kr/data/file/united/209f08342656ed266d510499b28dffd1.png" height="100px" style="margin-bottom: -5px;"/>
+<br/>
+대영이 선생님까지
+</h1>
+<p id="timer-dy">
+...
+</p>
+</div>
+
+
+
+<style>
+h1, p {
+  text-align: center;
+}
+h1 {
+    font-size: 40pt;
+}
+
+p {
+    font-size: 30px;
+}
+
+#main {
+  margin-top: 10%;
+}
+</style>
+
+<script
+              src="https://code.jquery.com/jquery-2.2.4.min.js"
+              integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+              crossorigin="anonymous"></script>
+<script>
+//디데이 종료 일자 설정 
+var countDownDate = new Date("June 18, 2018 09:00:00").getTime(); 
+var countDownDate_dy = new Date("November 24, 2018 09:00:00").getTime(); 
+var countDownDate_jb = new Date("September 4, 2018 09:00:00").getTime(); 
+//1초마다 갱신되도록 함수 생성,실행 
+var x = setInterval(function() { 
+// 오늘 날짜 등록 
+var now = new Date().getTime(); 
+// 종료일자에서 현재일자를 뺀 시간 
+var distance = countDownDate - now; 
+// 각 변수에 일, 시, 분, 초를 등록 
+var d = Math.floor(distance / (1000 * 60 * 60 * 24)); 
+var h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)); 
+var m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)); 
+var s = Math.floor((distance % (1000 * 60)) / 1000);
+var ms = Math.floor(distance % (1000) / 10);
+ms = ms.toString().padStart(2, "0")
+$("#timer").text(d+"일 " + h+"시 " +m+"분 "+s+"."+ms+"초");
+
+
+var distance = countDownDate_dy - now; 
+// 각 변수에 일, 시, 분, 초를 등록 
+var d = Math.floor(distance / (1000 * 60 * 60 * 24)); 
+var h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)); 
+var m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)); 
+var s = Math.floor((distance % (1000 * 60)) / 1000);
+var ms = Math.floor(distance % (1000) / 10);
+ms = ms.toString().padStart(2, "0")
+$("#timer-dy").text(d+"일 " + h+"시 " +m+"분 "+s+"."+ms+"초");
+
+
+var distance = countDownDate_jb - now; 
+// 각 변수에 일, 시, 분, 초를 등록 
+var d = Math.floor(distance / (1000 * 60 * 60 * 24)); 
+var h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)); 
+var m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)); 
+var s = Math.floor((distance % (1000 * 60)) / 1000);
+var ms = Math.floor(distance % (1000) / 10);
+ms = ms.toString().padStart(2, "0")
+$("#timer-jb").text(d+"일 " + h+"시 " +m+"분 "+s+"."+ms+"초");
+});
+</script>
+</body>
+</html>
